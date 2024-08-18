@@ -1,0 +1,15 @@
+# bulk create, index
+# index will add in case an index does not exist, replace if it exists
+# create will create in case index does not exist as it will abort.
+
+
+POST /_bulk
+  {"index": {"_index": "product", "_id": 100}}
+  {"name": "product 2", "inventory": 2}
+  {"create": {"_index": "product", "_id": 300}}
+  {"name": "product 3", "inventory": 2}
+
+POST /_bulk
+{"update": {"_id":300}}
+{"doc":{"name": "product 4"}}
+{"delete": {"_id": 100}}
