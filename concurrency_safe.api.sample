@@ -1,0 +1,8 @@
+# Data Prep
+POST /product/_doc/100 {
+  "name": "Product 1",
+  "price": 10,
+  "inventory": 5
+}
+# User A get product
+GET /product
