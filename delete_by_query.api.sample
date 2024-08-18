@@ -1,0 +1,12 @@
+#bulk delete documents based on condition \
+
+
+POST /product/_delete_by_query {
+  "query" : {
+    match_all: {}
+  }
+}
+
+
+#check results
+# you should get empty results, as all documents are deleted.
