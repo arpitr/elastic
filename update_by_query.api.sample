@@ -13,6 +13,24 @@ POST /product/_doc/200
   "price": 10,
   "inventory": 5
 }
+
+#check data
+GET /product/_search
+{
+  "query": {
+    "match_all": {}
+  }
+}
+
 # Update by query
+POST /product/_upda
 # update multiple documents based on condition
-POST /products
+POST /product/_update_by_query
+{
+  "script": {
+    "source": "ctx._source.inventory--"
+  },
+  "query": {
+    "match_all": {}
+  }
+}
