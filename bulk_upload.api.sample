@@ -1,0 +1,2 @@
+#@products-bulk is the file for the data input.
+curl -H "Content-Type: application/x-ndjson" -u <username>:<password> -XPOST https://0.0.0.0:9200/product/_bulk --data-binary "@products-bulk.json" --insecure -v
