@@ -1,0 +1,25 @@
+POST /_analyze
+{
+  "text" : "I&apos;m too <strong>GOOD</strong> to be true! :-)",
+  "analyzer": "standard"
+}
+
+POST /_analyze
+{
+  "text" : "I&apos;m too <strong>GOOD</strong> to be true! :-)",
+  "char_filter": ["html_strip"]
+}
+
+POST /_analyze
+{
+  "text" : "I&apos;m too <strong>GOOD</strong> to be true! :-)",
+  "filter": ["lowercase"]
+}
+
+POST /_analyze
+{
+  "text" : "I&apos;m too <strong>GOOD</strong> to be true! :-)",
+  "tokenizer": "standard",
+  "char_filter": ["html_strip"],
+  "filter": ["lowercase"]
+}
